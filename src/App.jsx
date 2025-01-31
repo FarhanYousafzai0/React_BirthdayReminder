@@ -15,15 +15,26 @@ const App = () => {
    }
   };
 
+
+  const deleSingleBirth = (id)=>{
+
+const newData = myData.filter((item,index)=>{
+
+  return item.id !== id;
+})
+
+setData(newData)
+  }
+
   return (
     <>
       <div className="container mx-auto border-0 rounded-md shadow-lg w-full md:w-[75%] lg:w-[45%] p-4">
-        <div className="text-center uppercase text-4xl">
+        <div className="text-center uppercase text-4xl" >
           {myData.length} birthdays today
         </div>
 
         {myData.map((item, index) => {
-          return <Singlebirthday key={item.id} {...item} />;
+          return <Singlebirthday key={item.id} {...item} remove={deleSingleBirth} />;
         })}
 
         {/* Corrected button */}

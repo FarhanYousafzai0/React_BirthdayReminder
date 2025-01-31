@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Singlebirthday = ({id,name,age,image}) => {
+const Singlebirthday = ({id,name,age,image,remove}) => {
   return (
     <>
       <div className="flex items-center justify-between my-4 shadow-lg rounded-md p-4">
@@ -14,7 +14,9 @@ const Singlebirthday = ({id,name,age,image}) => {
 </div>
 
 
-<button class=" cursor-pointer px-6 p-2 text-white font-semibold rounded-lg bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-500 transition-all duration-300 ease-in-out shadow-lg transform hover:scale-105">
+<button 
+onClick={()=>remove(id)}
+  class=" cursor-pointer px-6 p-2 text-white font-semibold rounded-lg bg-gradient-to-r from-red-500 to-red-700 hover:from-red-700 hover:to-red-500 transition-all duration-300 ease-in-out shadow-lg transform hover:scale-105">
     Remove
   </button>
 
